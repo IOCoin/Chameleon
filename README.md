@@ -1,31 +1,7 @@
-## I/O Coin Application Based Blockchain Platform
+## Chameleon  
 
-I/O Coin - DIONS (Decentralized Input Output Name Server)
+Chameleon - (Distributed system interoperability platform)
 ===========================
-
-I/O Coin is a POS CiPher-Based Blockchain
-
-Features:
-* Symbol: IOC
-* 16 Million POW coins
-* 22 Million total coins
-*  4 MB Blocks
-*  2 MB Data Cap
-* 60 second blocktime
-* 1.5 IOC POS reward + any tx fees in that block, based on the percentage of coins staking
-* Enhanced API allowing registration of aliases and associated data,
-  aliases may be kept encrypted or public. Aliases, encrypted or public may
-  send and receive.
-* New API includes a messaging layer for encrypted communications in addition
-  to plain text messaging. Encryption uses AES 256 encryption together with RSA
-  encryption (4096).
-* 2014 Fair Launch via X11 PoW/PoS
-* 1250 I/O block reward, first 30 blocks half (625)
-* 12815 PoW block limit
-* P2P Port: 33764
-* RPC Port: 33765
-* Dedicated Node: 178.62.109.73
-* Shade API added. (Stealth addresses based on Diffie Hellman key exchange)
 
 
 Development process
@@ -41,7 +17,7 @@ or are controversial.
 
 The master branch is regularly built and tested, but is not guaranteed
 to be completely stable. Tags are regularly created to indicate new
-stable release versions of I/O Coin.
+stable release versions of Chameleon.
 
 Feature branches are created when there are major new features being
 worked on by several people.
@@ -60,34 +36,34 @@ labeled 'stale'.
 Disclaimer
 ===========================
 
-I/O Coin Blockchain Disclaimer 
+Chameleon Blockchain Disclaimer 
 
 
 **General**
 
-The I/O Coin Blockchain & I/O Coin is a open source decentralized ledger, with no governing body. The contributors make no claims that the Content uploaded to the I/O Coin Blockchain is appropriate or may be downloaded anywhere in the Universe. Access to the Content may not be legal by certain persons or in certain countries. If you access the I/O Coin Blockchain from anywhere, you do so at your own risk and are responsible for compliance with the laws of your jurisdiction. The provisions of the UN Convention on Contracts for the International Sale of Goods will not apply to these Terms. Ccontributors (and I/O Coin Blockchain ) are considered safe from user submitted content under section 512 of the Digital Millennium Copyright Act.
+The Chameleon Blockchain & Chameleon is a open source decentralized ledger, with no governing body. The contributors make no claims that the Content uploaded to the Chameleon Blockchain is appropriate or may be downloaded anywhere in the Universe. Access to the Content may not be legal by certain persons or in certain countries. If you access the Chameleon Blockchain from anywhere, you do so at your own risk and are responsible for compliance with the laws of your jurisdiction. The provisions of the UN Convention on Contracts for the International Sale of Goods will not apply to these Terms. Ccontributors (and Chameleon Blockchain ) are considered safe from user submitted content under section 512 of the Digital Millennium Copyright Act.
 
 **Legal Notices**
 
-We, the curators of the I/O Coin Blockchain, provide it as a public service to our users.
-Please carefully review the following basic rules that govern your use of the I/O Coin Blockchain. Please note that your use of the I/O Coin Blockchain constitutes your unconditional agreement to follow and be bound by these Terms and Conditions of Use. If you (the "User") do not agree to them, do not use the I/O Coin Blockchain, upload any materials to the I/O Coin Blockchain or download any materials from them.
-The curators bound by the open source community via voting mechanism, reserve the right to update or modify these Terms and Conditions at any time without prior notice to User. Your use of the I/O Coin Blockchain following any such change constitutes your unconditional agreement to follow and be bound by these Terms and Conditions as changed. For this reason, we encourage you to review these Terms and Conditions of Use whenever you use the I/O Coin Blockchain.
-These Terms and Conditions of Use apply to the use of the I/O Coin Blockchain and do not extend to any linked third party sites. These Terms and Conditions and our Privacy Policy, which are hereby incorporated by reference, contain the entire agreement (the “Agreement”) between you and the I/O Coin Community with respect to the I/O Coin Blockchain. Any rights not expressly granted herein are reserved.
+We, the curators of the Chameleon Blockchain, provide it as a public service to our users.
+Please carefully review the following basic rules that govern your use of the Chameleon Blockchain. Please note that your use of the Chameleon Blockchain constitutes your unconditional agreement to follow and be bound by these Terms and Conditions of Use. If you (the "User") do not agree to them, do not use the Chameleon Blockchain, upload any materials to the Chameleon Blockchain or download any materials from them.
+The curators bound by the open source community via voting mechanism, reserve the right to update or modify these Terms and Conditions at any time without prior notice to User. Your use of the Chameleon Blockchain following any such change constitutes your unconditional agreement to follow and be bound by these Terms and Conditions as changed. For this reason, we encourage you to review these Terms and Conditions of Use whenever you use the Chameleon Blockchain.
+These Terms and Conditions of Use apply to the use of the Chameleon Blockchain and do not extend to any linked third party sites. These Terms and Conditions and our Privacy Policy, which are hereby incorporated by reference, contain the entire agreement (the “Agreement”) between you and the Chameleon Community with respect to the Chameleon Blockchain. Any rights not expressly granted herein are reserved.
 
 **Permitted and Prohibited Uses**
 
-You may use the I/O Coin Blockchain for the sole purpose of sharing and exchanging ideas with other Users. You may not use the I/O Coin Blockchain to violate any applicable local, state, national, or international law, including without limitation any applicable laws relating to antitrust or other illegal trade or business practices, federal and state securities laws, regulations promulgated by the U.S. Securities and Exchange Commission, any rules of any national or other securities exchange, and any U.S. laws, rules, and regulations governing the export and re-export of commodities or technical data.
-You may not upload or transmit any material that infringes or misappropriates any person's copyright, patent, trademark, or trade secret, or disclose via the I/O Coin Blockchain any information the disclosure of which would constitute a violation of any confidentiality obligations you may have.
-You may not upload any viruses, worms, Trojan horses, or other forms of harmful computer code, nor subject the I/O Coin Blockchain network or nodes to unreasonable traffic loads, or otherwise engage in conduct deemed disruptive to the ordinary operation of the I/O Coin Blockchain.
-You are strictly prohibited from communicating on or through the I/O Coin Blockchain any unlawful, harmful, offensive, threatening, abusive, libelous, harassing, defamatory, vulgar, obscene, profane, hateful, fraudulent, sexually explicit, racially, ethnically, or otherwise objectionable material of any sort, including, but not limited to, any material that encourages conduct that would constitute a criminal offense, give rise to civil liability, or otherwise violate any applicable local, state, national, or international law.
-You are expressly prohibited from compiling and using other Users' personal information, including ip addresses, public aliases, public addresses, public messages or other  information that may appear on the I/O Coin Blockchain, for the purpose of creating or compiling marketing and/or mailing lists and from sending other Users unsolicited marketing materials, whether by facsimile, email, or other technological means.
-You also are expressly prohibited from distributing User's address information to third-party parties for marketing purposes. The contributors shall deem the compiling of marketing and mailing lists using Users' personal information, the sending of unsolicited marketing materials to Users, or the distribution of Users' personal information to third parties for marketing purposes as a material breach of these Terms and Conditions of Use, and the contributors reserve the right to terminate or suspend your access to and use of the I/O Coin Blockchain via community consensus and to revoke any transaction if in violation of any applicable local, state, national, or international law, including without limitation any applicable laws relating to antitrust or other illegal trade, personal or business practices, federal and state securities laws, regulations promulgated by the U.S.
+You may use the Chameleon Blockchain for the sole purpose of sharing and exchanging ideas with other Users. You may not use the Chameleon Blockchain to violate any applicable local, state, national, or international law, including without limitation any applicable laws relating to antitrust or other illegal trade or business practices, federal and state securities laws, regulations promulgated by the U.S. Securities and Exchange Commission, any rules of any national or other securities exchange, and any U.S. laws, rules, and regulations governing the export and re-export of commodities or technical data.
+You may not upload or transmit any material that infringes or misappropriates any person's copyright, patent, trademark, or trade secret, or disclose via the Chameleon Blockchain any information the disclosure of which would constitute a violation of any confidentiality obligations you may have.
+You may not upload any viruses, worms, Trojan horses, or other forms of harmful computer code, nor subject the Chameleon Blockchain network or nodes to unreasonable traffic loads, or otherwise engage in conduct deemed disruptive to the ordinary operation of the Chameleon Blockchain.
+You are strictly prohibited from communicating on or through the Chameleon Blockchain any unlawful, harmful, offensive, threatening, abusive, libelous, harassing, defamatory, vulgar, obscene, profane, hateful, fraudulent, sexually explicit, racially, ethnically, or otherwise objectionable material of any sort, including, but not limited to, any material that encourages conduct that would constitute a criminal offense, give rise to civil liability, or otherwise violate any applicable local, state, national, or international law.
+You are expressly prohibited from compiling and using other Users' personal information, including ip addresses, public aliases, public addresses, public messages or other  information that may appear on the Chameleon Blockchain, for the purpose of creating or compiling marketing and/or mailing lists and from sending other Users unsolicited marketing materials, whether by facsimile, email, or other technological means.
+You also are expressly prohibited from distributing User's address information to third-party parties for marketing purposes. The contributors shall deem the compiling of marketing and mailing lists using Users' personal information, the sending of unsolicited marketing materials to Users, or the distribution of Users' personal information to third parties for marketing purposes as a material breach of these Terms and Conditions of Use, and the contributors reserve the right to terminate or suspend your access to and use of the Chameleon Blockchain via community consensus and to revoke any transaction if in violation of any applicable local, state, national, or international law, including without limitation any applicable laws relating to antitrust or other illegal trade, personal or business practices, federal and state securities laws, regulations promulgated by the U.S.
  
-The Curator's note that unauthorized use of User's personal information in connection with unsolicited marketing correspondence also may constitute violations of various state and federal anti-spam statutes. The contributors reserve the right to report the abuse of I/O Coin Blockchain to the appropriate law enforcement and government authorities, and the contributors and or Community will fully cooperate with any authorities investigating violations of these laws.
+The Curator's note that unauthorized use of User's personal information in connection with unsolicited marketing correspondence also may constitute violations of various state and federal anti-spam statutes. The contributors reserve the right to report the abuse of Chameleon Blockchain to the appropriate law enforcement and government authorities, and the contributors and or Community will fully cooperate with any authorities investigating violations of these laws.
 
 **User Discussion Lists and Forums**
 
-The contributors may, but are not obligated to, monitor or review any areas on the I/O Coin Blockchain transactions where users transmit or post communications or communicate solely with each other, including but not limited to user forums and email lists, and the content of any such communications. The Operators, however, will have no liability related to the content of any such communications, whether or not arising under the laws of copyright, libel, privacy, obscenity, or otherwise. The contributors may edit or remove transactions via Community consensus on the I/O Coin Blockchain at their discretion at any time, if any material is deemed unlawful.
+The contributors may, but are not obligated to, monitor or review any areas on the Chameleon Blockchain transactions where users transmit or post communications or communicate solely with each other, including but not limited to user forums and email lists, and the content of any such communications. The Operators, however, will have no liability related to the content of any such communications, whether or not arising under the laws of copyright, libel, privacy, obscenity, or otherwise. The contributors may edit or remove transactions via Community consensus on the Chameleon Blockchain at their discretion at any time, if any material is deemed unlawful.
  
 **User Conduct**
 
@@ -103,7 +79,7 @@ use the Services to engage in or promote any activity that violates these Terms.
  
 **Indemnification**
 
-You agree to defend, indemnify and hold harmless the contributors, agents, vendors or suppliers from and against any and all claims, damages, costs and expenses, including reasonable attorneys' fees, arising from or related to your use or misuse of the I/O Coin Blockchain, including, without limitation, your violation of these Terms and Conditions, the infringement by you, or any other subscriber or user of your account, of any intellectual property right or other right of any person or entity. This is a decentralized ledger, with no central body of control but only via consensus of the I/O Coin open source community.
+You agree to defend, indemnify and hold harmless the contributors, agents, vendors or suppliers from and against any and all claims, damages, costs and expenses, including reasonable attorneys' fees, arising from or related to your use or misuse of the Chameleon Blockchain, including, without limitation, your violation of these Terms and Conditions, the infringement by you, or any other subscriber or user of your account, of any intellectual property right or other right of any person or entity. This is a decentralized ledger, with no central body of control but only via consensus of the Chameleon open source community.
 
 **Termination**
 
@@ -123,19 +99,19 @@ THE CURATOR'S TOTAL CUMULATIVE LIABILITY FOR ANY AND ALL CLAIMS IN CONNECTION WI
  
 **Notification Of Possible Copyright Infringement**
 
-In the event you believe that material or content published on the I/O Coin associated blockchain may infringe on your copyright or that of another, please contact us.
+In the event you believe that material or content published on the Chameleon associated blockchain may infringe on your copyright or that of another, please contact us.
 
 
-By using I/O Coin products, software, services or Blockchains you also agree to the following terms and conditions. 
+By using Chameleon products, software, services or Blockchains you also agree to the following terms and conditions. 
 
-The information contained in this Blockchain is for general information purposes only. The information is provided by I/O Coin blockchain and while we attempt to keep information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the Blockchain or the information, products, services, or related graphics contained on the Blockchain for any purpose. Any reliance you place on such information is therefore strictly at your own risk. 
+The information contained in this Blockchain is for general information purposes only. The information is provided by Chameleon blockchain and while we attempt to keep information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the Blockchain or the information, products, services, or related graphics contained on the Blockchain for any purpose. Any reliance you place on such information is therefore strictly at your own risk. 
 
-In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this I/O Coin Blockchain & I/O Coin Wallet. 
+In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this Chameleon Blockchain & Chameleon Wallet. 
 
-I/O Coin Blockchain & I/O Coin makes every effort to keep the Blockchain up and running smoothly 24/7. However, I/O Coin Blockchain takes no responsibility for, and will not be liable for, the Blockchain being temporarily unavailable due to technical issues beyond our control. 
+Chameleon Blockchain & Chameleon makes every effort to keep the Blockchain up and running smoothly 24/7. However, Chameleon Blockchain takes no responsibility for, and will not be liable for, the Blockchain being temporarily unavailable due to technical issues beyond our control. 
 
-The I/O Coin project developers, henceforth referred to as The I/O Coin
-Project and I/O Coin Wallet take no responsibility for and will not be liable for any financial loss arising from the use of our wallet service including any of the following. 
+The Chameleon project developers, henceforth referred to as The Chameleon 
+Project and Chameleon Wallet take no responsibility for and will not be liable for any financial loss arising from the use of our wallet service including any of the following. 
 
 
 Financial loss due to forgotten mnemonics if in the event of an HD Wallet System.
@@ -147,10 +123,10 @@ Financial loss due to corrupted data on our blockchain or encryption failiure.
 Financial loss or data losss due to ecncryption brutte force or blockchain failiure.
 Financial loss or data losss due to corrupted wallet.dat or end user computer failiure.
 Financial loss due to incorrectly constructed transactions or mistyped iocoin addresses.
-Financial loss due to "phishing" or other websites masquerading as The I/O Coin Project.
+Financial loss due to "phishing" or other websites masquerading as The Chameleon Project.
 
-The I/O Coin Project is not a bank or regulated financial institution. Any I/O Coin stored using I/O Coin’s Blockchain wallets are not in I/O Coin Project control. The I/O Coin Open Source Developers simply provide an interface to access the I/O Coin Blockchain. The I/O Coin Blockchain community and developers does not have control over or take any responsibility for any transactions made through the I/O Coin Blockchain & I/O Coin Wallet. The I/O Coin Project, contributors or the I/O Coin community have no control of any failure as the blockchain is an open source project  (Open Source Blockchain) and therefore carries no liability to any central entity regarding failure of wallets or the Blockchain. Open Source developers can make requests through proper channels for upgrades, bug reporting and enhancements which would ultimately be approved via consensus mechanisms by the open source I/O Coin community. 
+The Chameleon Project is not a bank or regulated financial institution. Any Chameleon stored using Chameleon’s Blockchain wallets are not in Chameleon Project control. The Chameleon Open Source Developers simply provide an interface to access the Chameleon Blockchain. The Chameleon Blockchain community and developers does not have control over or take any responsibility for any transactions made through the Chameleon Blockchain & Chameleon Wallet. The Chameleon Project, contributors or the Chameleon community have no control of any failure as the blockchain is an open source project  (Open Source Blockchain) and therefore carries no liability to any central entity regarding failure of wallets or the Blockchain. Open Source developers can make requests through proper channels for upgrades, bug reporting and enhancements which would ultimately be approved via consensus mechanisms by the open source Chameleon community. 
 
 
 ===
-// Copyright (c) 2018 The I/O Coin developers
+// Copyright (c) 2018 The Chameleon developers

@@ -159,9 +159,7 @@ extern json_spirit::Value dumpprivkey(const json_spirit::Array& params, bool fHe
 extern json_spirit::Value importprivkey(const json_spirit::Array& params, bool fHelp);
 
 extern json_spirit::Value sendalert(const json_spirit::Array& params, bool fHelp);
-extern json_spirit::Value trc(const json_spirit::Array& params, bool fHelp);
 
-extern json_spirit::Value trcbase(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value getsubsidy(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value getmininginfo(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value getstakinginfo(const json_spirit::Array& params, bool fHelp);
@@ -255,12 +253,10 @@ extern json_spirit::Value getblockbynumber(const json_spirit::Array& params, boo
 extern json_spirit::Value getcheckpoint(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value publicKey(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value sendPublicKey(const json_spirit::Array& params, bool fHelp);
-extern json_spirit::Value xstat(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value sendSymmetric(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value sendPlainMessage(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value mapVertex(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value vtxtrace(const json_spirit::Array& params, bool fHelp);
-extern json_spirit::Value svtx(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value sendMessage(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value registerAlias(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value uC(const json_spirit::Array& params, bool fHelp);
@@ -269,13 +265,10 @@ extern json_spirit::Value mapProject(const json_spirit::Array& params, bool fHel
 extern json_spirit::Value alias(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value statusList(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value downloadDecrypt(const json_spirit::Array& params, bool fHelp);
-extern json_spirit::Value simplexU(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value downloadDecryptEPID(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value updateEncrypt(const json_spirit::Array& params, bool fHelp);
-extern json_spirit::Value ioget(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value transferAlias(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value transferEncryptedAlias(const json_spirit::Array& params, bool fHelp);
-extern json_spirit::Value psimplex(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value transferEncryptedExtPredicate(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value decryptAlias(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value primaryCXValidate(const json_spirit::Array& params, bool fHelp);

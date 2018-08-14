@@ -278,7 +278,6 @@ std::string HelpMessage()
         "  -daemon                " + _("Run in the background as a daemon and accept commands") + "\n" +
 #endif
         "  -testnet               " + _("Use the test network") + "\n" +
-        "  -viewwallet               " + _("view wallet only") + "\n" +
         "  -debug                 " + _("Output extra debugging information. Implies all other -debug* options") + "\n" +
         "  -debugnet              " + _("Output extra network debugging information") + "\n" +
         "  -logtimestamps         " + _("Prepend debug output with timestamp") + "\n" +
@@ -411,13 +410,6 @@ bool AppInit2()
     fTestNet = GetBoolArg("-testnet");
     if (fTestNet) {
         SoftSetBoolArg("-irc", true);
-    }
-
-    fViewWallet = GetBoolArg("-viewwallet");
-    if(fViewWallet)
-    {
-      if(filesystem::exists(GetDataDir() / "wallet.dat"))
-        return InitError(_("Initialization error. Configured as view wallet but wallet.dat file exists in configuration directory. I/O Coin shutting down."));
     }
 
     if (mapArgs.count("-bind")) {
@@ -737,7 +729,7 @@ bool AppInit2()
     printf("Loading block index...\n");
     nStart = GetTimeMillis();
     if (!LoadBlockIndex())
-      return InitError(_("Error loading blkindex.dat"));
+        return InitError(_("Error loading blkindex.dat"));
 
 
     // as LoadBlockIndex can take several minutes, it's possible the user
@@ -859,7 +851,7 @@ bool AppInit2()
         pwalletMain->SetMaxVersion(nMaxVersion);
     }
 
-    if (fFirstRun && !fViewWallet)
+    if (fFirstRun)
     {
         // Create new keyUser and set as default key
         RandAddSeedPerfmon();
@@ -876,17 +868,6 @@ bool AppInit2()
     printf(" wallet      %15"PRId64"ms\n", GetTimeMillis() - nStart);
 
     RegisterWallet(pwalletMain);
-
-    if(GetBoolArg("-xscan"))
-    {
-      filesystem::path dc = GetDataDir() / "aliascache.dat";
-      FILE *file = fopen(dc.string().c_str(), "rb");
-      if (file) 
-      {
-        filesystem::path dc__ = GetDataDir() / "aliascache.dat.old";
-        RenameOver(dc, dc__);
-      }
-    }
 
     ln1Db = new LocatorNodeDB("cr+");
     CBlockIndex *pindexRescan = pindexBest;
@@ -914,7 +895,16 @@ bool AppInit2()
 
         if(GetBoolArg("-xscan") || GetBoolArg("-upgradewallet"))
         {
-          xsc(pindexGenesisBlock);
+          filesystem::path dc = GetDataDir() / "aliascache.dat";
+          FILE *file = fopen(dc.string().c_str(), "rb");
+          if (file) 
+          {
+            filesystem::path dc__ = GetDataDir() / "aliascache.dat.old";
+            RenameOver(dc, dc__);
+            dc = filesystem::path(GetDataDir())/"aliascache.dat";
+            ln1Db = new LocatorNodeDB("cr+");
+            xsc(pindexGenesisBlock);
+          }
         }
     }
 
