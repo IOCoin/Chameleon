@@ -10,6 +10,7 @@ src/build.h
 *.orig
 *.x50
 *.o
+*.swp_
 *.patch
 .iocoin
 #compilation and Qt preprocessor part
