@@ -112,6 +112,7 @@ OBJS= \
     obj/init.o \
     obj/irc.o \
     obj/keystore.o \
+    obj/view.o \
     obj/miner.o \
     obj/main.o \
     obj/net.o \
@@ -156,7 +157,7 @@ OBJS= \
     obj/zerocoin/SpendMetaData.o \
     obj/zerocoin/ZeroTest.o
 
-all: iocoind
+all: chd
 
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
 DEFS += $(addprefix -I,$(CURDIR)/leveldb/include)
@@ -204,11 +205,11 @@ obj/zerocoin/%.o: zerocoin/%.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-iocoind: $(OBJS:obj/%=obj/%)
+chd: $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f iocoind
+	-rm -f chd
 	-rm -f obj/*.o
 	-rm -f obj/zerocoin/*.o
 	-rm -f obj/*.P
