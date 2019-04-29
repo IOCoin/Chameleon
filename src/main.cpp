@@ -97,7 +97,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "I/OCoin Signed Message:\n";
+const string strMessageMagic = "Chameleon Signed Message:\n";
 
 extern LocatorNodeDB* ln1Db;
 
@@ -2832,7 +2832,7 @@ bool CheckDiskSpace(uint64_t nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low!");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
-        uiInterface.ThreadSafeMessageBox(strMessage, "I/OCoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+        uiInterface.ThreadSafeMessageBox(strMessage, "Chameleon", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
         StartShutdown();
         return false;
     }
@@ -2949,7 +2949,8 @@ bool LoadBlockIndex(bool fAllowNew)
         //     CTxOut(empty)
         //   vMerkleTree: cd5029ac01
 
-        const char* pszTimestamp = "23 July 2014 BitPay Releases Copay Beta - A New Multi-signature Wallet";
+        //XXXX const char* pszTimestamp = "23 July 2014 BitPay Releases Copay Beta - A New Multi-signature Wallet";
+        const char* pszTimestamp = "16 Jan 2019 - alfred noble releases chameleon whitepaper in dions block 2165178";
         CTransaction txNew;
         txNew.nTime = 1406153471;
         txNew.vin.resize(1);

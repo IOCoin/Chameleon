@@ -156,7 +156,7 @@ Value getnewaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getnewaddress [account]\n"
-            "Returns a new I/OCoin address for receiving payments.  "
+            "Returns a new Chameleon address for receiving payments.  "
             "If [account] is specified, it is added to the address book "
             "so payments received with the address will be credited to [account].");
 
@@ -203,13 +203,13 @@ Value sectionlog(const Array& params, bool fHelp)
   string sign = params[0].get_str();
   cba s(sign);
     if (!s.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "sign : Invalid I/OCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "sign : Invalid Chameleon address");
   string primitive = params[1].get_str();
   vchType p = ParseHex(primitive);
   CPubKey pk(p);
   cba pr(pk.GetID());
     if (!pr.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "primitive : Invalid I/OCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "primitive : Invalid Chameleon address");
  
   Object o_s; 
   o_s.push_back(Pair("sign", s.ToString()));
@@ -403,14 +403,14 @@ Value center__base__0(const Array& params, bool fHelp)
   string r = params[1].get_str();
   cba u(q);
   if(!u.IsValid())
-    throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address");
+    throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address");
 
   if(!IsMine(*pwalletMain, u.Get()))
     throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid");
 
   cba v(r);
   if(!v.IsValid())
-    throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address");
+    throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address");
 
   if(!IsMine(*pwalletMain, v.Get()))
     throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid");
@@ -491,7 +491,7 @@ Value getaccountaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "getaccountaddress <account>\n"
-            "Returns the current I/OCoin address for receiving payments to this account.");
+            "Returns the current Chameleon address for receiving payments to this account.");
 
     // Parse the account first so we don't generate a key if there's an error
     string strAccount = AccountFromValue(params[0]);
@@ -514,7 +514,7 @@ Value setaccount(const Array& params, bool fHelp)
 
     cba address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address");
 
 
     string strAccount;
@@ -542,7 +542,7 @@ Value sa(const Array& params, bool fHelp)
 
     cba address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address");
 
 
     string strAccount;
@@ -564,7 +564,7 @@ Value getaccount(const Array& params, bool fHelp)
 
     cba address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address");
 
     string strAccount;
     map<CTxDestination, string>::iterator mi = pwalletMain->mapAddressBook.find(address.Get());
@@ -606,7 +606,7 @@ Value addresstodion(const Array& params, bool fHelp)
     ln1Db->filter();
     cba address__(address);
     if (!address__.IsValid())
-      throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address");
+      throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address");
 
     string alias;
 
@@ -742,7 +742,7 @@ Value sendtoaddress(const Array& params, bool fHelp)
       }
       else
       {
-          throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address or unknown alias");
+          throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address or unknown alias");
       }
     }
 
@@ -916,7 +916,7 @@ Value xtu_url__(const string& s)
 
     CScript scriptPubKey;
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address");
     scriptPubKey.SetDestination(address.Get());
     if (!IsMine(*pwalletMain,scriptPubKey))
         return (double)0.0;
@@ -974,7 +974,7 @@ Value xtu_url(const Array& params, bool fHelp)
 
     CScript scriptPubKey;
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address");
     scriptPubKey.SetDestination(address.Get());
     if (!IsMine(*pwalletMain,scriptPubKey))
         return (double)0.0;
@@ -1012,7 +1012,7 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
     cba address = cba(params[0].get_str());
     CScript scriptPubKey;
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address");
     scriptPubKey.SetDestination(address.Get());
     if (!IsMine(*pwalletMain,scriptPubKey))
         return (double)0.0;
@@ -1050,7 +1050,7 @@ Value gra(const Array& params, bool fHelp)
     cba address = cba(params[0].get_str());
     CScript scriptPubKey;
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address");
     scriptPubKey.SetDestination(address.Get());
     if (!IsMine(*pwalletMain,scriptPubKey))
         return (double)0.0;
@@ -1290,7 +1290,7 @@ Value sendfrom(const Array& params, bool fHelp)
     string strAccount = AccountFromValue(params[0]);
     cba address(params[1].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address");
     int64_t nAmount = AmountFromValue(params[2]);
 
     int nMinDepth = 1;
@@ -1356,7 +1356,7 @@ Value sendmany(const Array& params, bool fHelp)
     {
         cba address(s.name_);
         if (!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid I/OCoin address: ")+s.name_);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid Chameleon address: ")+s.name_);
 
         if (setAddress.count(address))
             throw JSONRPCError(RPC_INVALID_PARAMETER, string("Invalid parameter, duplicated address: ")+s.name_);
@@ -1400,7 +1400,7 @@ Value addmultisigaddress(const Array& params, bool fHelp)
     {
         string msg = "addmultisigaddress <nrequired> <'[\"key\",\"key\"]'> [account]\n"
             "Add a nrequired-to-sign multisignature address to the wallet\"\n"
-            "each key is a I/OCoin address or hex-encoded public key\n"
+            "each key is a Chameleon address or hex-encoded public key\n"
             "If [account] is specified, assign address to [account].";
         throw runtime_error(msg);
     }
@@ -2263,7 +2263,7 @@ Value encryptwallet(const Array& params, bool fHelp)
     // slack space in .dat files; that is bad if the old data is
     // unencrypted private keys. So:
     StartShutdown();
-    return "wallet encrypted; I/OCoin server stopping, restart to run with encrypted wallet.  The keypool has been flushed, you need to make a new backup.";
+    return "wallet encrypted; Chameleon server stopping, restart to run with encrypted wallet.  The keypool has been flushed, you need to make a new backup.";
 }
 
 class DescribeAddressVisitor : public boost::static_visitor<Object>

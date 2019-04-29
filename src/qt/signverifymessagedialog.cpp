@@ -24,11 +24,11 @@ SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget *parent) :
 
 #if (QT_VERSION >= 0x040700)
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->addressIn_SM->setPlaceholderText(tr("Enter a I/OCoin address (e.g. iphU6HbZCuDsx1nGWncuwxYdHcF74zLv8U)"));
+    ui->addressIn_SM->setPlaceholderText(tr("Enter a Chameleon address (e.g. iphU6HbZCuDsx1nGWncuwxYdHcF74zLv8U)"));
     ui->signatureOut_SM->setPlaceholderText(tr("Click \"Sign Message\" to generate signature"));
 
-    ui->addressIn_VM->setPlaceholderText(tr("Enter a I/OCoin address (e.g. iphU6HbZCuDsx1nGWncuwxYdHcF74zLv8U)"));
-    ui->signatureIn_VM->setPlaceholderText(tr("Enter I/OCoin signature"));
+    ui->addressIn_VM->setPlaceholderText(tr("Enter a Chameleon address (e.g. iphU6HbZCuDsx1nGWncuwxYdHcF74zLv8U)"));
+    ui->signatureIn_VM->setPlaceholderText(tr("Enter Chameleon signature"));
 #endif
 
     GUIUtil::setupAddressWidget(ui->addressIn_SM, this);

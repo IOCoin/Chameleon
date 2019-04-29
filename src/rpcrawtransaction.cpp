@@ -329,7 +329,7 @@ Value listunspent(const Array& params, bool fHelp)
         {
             cba address(input.get_str());
             if (!address.IsValid())
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid I/OCoin address: ")+input.get_str());
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid Chameleon address: ")+input.get_str());
             if (setAddress.count(address))
                 throw JSONRPCError(RPC_INVALID_PARAMETER, string("Invalid parameter, duplicated address: ")+input.get_str());
            setAddress.insert(address);
@@ -440,7 +440,7 @@ Value crawgen(const Array& params, bool fHelp)
         }
         else
         {
-          throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address or unknown alias");
+          throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address or unknown alias");
         }
       }
 
@@ -555,7 +555,7 @@ Value createrawtransaction(const Array& params, bool fHelp)
         }
         else
         {
-          throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address or unknown alias");
+          throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address or unknown alias");
         }
       }
 

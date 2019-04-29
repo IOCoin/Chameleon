@@ -2693,7 +2693,7 @@ Value primaryCXValidate(const Array& params, bool fHelp)
       }
       else
       {
-          throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin predicate");
+          throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon predicate");
       }
     }
 
@@ -4291,7 +4291,7 @@ Value transferEncryptedAlias(const Array& params, bool fHelp)
       }
       else
       {
-          throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin predicate");
+          throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon predicate");
       }
     }
 
@@ -4582,7 +4582,7 @@ Value transferAlias(const Array& params, bool fHelp)
       }
       else
       {
-          throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid I/OCoin address or unknown alias");
+          throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Chameleon address or unknown alias");
       }
     }
 
