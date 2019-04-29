@@ -54,12 +54,14 @@ public:
 
 
 /** C++ wrapper for BIGNUM (OpenSSL bignum) */
-class CBigNum : public BIGNUM
+class CBigNum 
 {
+private:
+  BIGNUM* p;
 public:
     CBigNum()
     {
-        BN_init(this);
+      this->p = BN_new();
     }
 
     CBigNum(const CBigNum& b)
@@ -72,6 +74,10 @@ public:
         }
     }
 
+    BIGNUM* operator()()
+    {
+      return this->p;
+    }
     CBigNum& operator=(const CBigNum& b)
     {
         if (!BN_copy(this, &b))
