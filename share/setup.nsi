@@ -1,4 +1,4 @@
-Name I/OCoin
+Name Chameleon
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -6,8 +6,8 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 3.0.0.0
-!define COMPANY "I/OCoin project"
-!define URL http://iocoin.io
+!define Company "Chameleon project"
+!define URL https://www.chameleonledger.com
 
 # MUI Symbol Definitions
 !define MUI_ICON "..\share\pixmaps\iocoin.ico"
@@ -45,14 +45,14 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile iocoin-${VERSION}-win32-setup.exe
-InstallDir $PROGRAMFILES\IOCoin
+OutFile chameleon-${VERSION}-win32-setup.exe
+InstallDir $PROGRAMFILES\Chameleon
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
 VIProductVersion ${VERSION}
-VIAddVersionKey ProductName I/OCoin
+VIAddVersionKey ProductName Chameleon
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -84,8 +84,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\I/OCoin.lnk" $INSTDIR\iocoin-qt.exe
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall I/OCoin.lnk" $INSTDIR\uninstall.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Chameleon.lnk" $INSTDIR\iocoin-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall Chameleon.lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "${VERSION}"
@@ -95,10 +95,10 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "iocoin" "URL Protocol" ""
-    WriteRegStr HKCR "iocoin" "" "URL:Litecoin"
-    WriteRegStr HKCR "iocoin\DefaultIcon" "" $INSTDIR\iocoin-qt.exe
-    WriteRegStr HKCR "iocoin\shell\open\command" "" '"$INSTDIR\iocoin-qt.exe" "%1"'
+    WriteRegStr HKCR "chameleon" "URL Protocol" ""
+    WriteRegStr HKCR "chameleon" "" "URL:Litecoin"
+    WriteRegStr HKCR "chameleon\DefaultIcon" "" $INSTDIR\chameleon-qt.exe
+    WriteRegStr HKCR "chameleon\shell\open\command" "" '"$INSTDIR\chameleon-qt.exe" "%1"'
 
 SectionEnd
 
@@ -117,7 +117,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\iocoin-qt.exe
+    Delete /REBOOTOK $INSTDIR\chameleon-qt.exe
     Delete /REBOOTOK $INSTDIR\license.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     #RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -128,9 +128,9 @@ SectionEnd
 
 Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall I/OCoin.lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\I/OCoin.lnk"
-    Delete /REBOOTOK "$SMSTARTUP\I/OCoin.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall chameleon.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\chameleon.lnk"
+    Delete /REBOOTOK "$SMSTARTUP\chameleon.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -138,7 +138,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "iocoin"
+    DeleteRegKey HKCR "chameleon"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0
