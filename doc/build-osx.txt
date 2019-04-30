@@ -1,18 +1,19 @@
-Copyright (c) 2009-2012 Bitcoin Developers
-Distributed under the MIT/X11 software license, see the accompanying file
-license.txt or http://www.opensource.org/licenses/mit-license.php.  This
-product includes software developed by the OpenSSL Project for use in the
-OpenSSL Toolkit (http://www.openssl.org/).  This product includes cryptographic
-software written by Eric Young (eay@cryptsoft.com) and UPnP software written by
-Thomas Bernard.
+Copyright (c) 2019 Chameleon Developers
+Copyright (c) 2014 I/OCoin Developers
+Copyright (c) 2013 NovaCoin Developers
+Copyright (c) 2011-2012 PPCoin Developers
+Copyright (c) 2009-2012 Bitcoin Developer
+Distributed under the MIT/X11 software license, see the accompanying
+file license.txt or http://www.opensource.org/licenses/mit-license.php.
+This product includes software developed by the OpenSSL Project for use in
+the OpenSSL Toolkit (http://www.openssl.org/).  This product includes
+cryptographic software written by alfred noble, joel bosh (iocoindev@gmail.com), Eric Young (eay@cryptsoft.com) and the 
+I/OCoin Developers 
+
+Mac OS X chameleond build instructions
 
 
-Mac OS X iocoind build instructions
-Laszlo Hanyecz <solar@heliacal.net>
-Douglas Huff <dhuff@jrbobdobbs.org>
-
-
-See readme-qt.rst for instructions on building I/OCoin QT, the
+See readme-qt.rst for instructions on building Chameleon QT, the
 graphical user interface.
 
 Tested on 10.5 and 10.6 intel.  PPC is not supported because it's big-endian.
@@ -21,13 +22,12 @@ All of the commands should be executed in Terminal.app.. it's in
 /Applications/Utilities
 
 You need to install XCode with all the options checked so that the compiler and
-everything is available in /usr not just /Developer I think it comes on the DVD
-but you can get the current version from http://developer.apple.com
+everything is available in /usr not just /Developer get the latest version from http://developer.apple.com
 
 
 1.  Clone the github tree to get the source code:
 
-git clone git@github.com:rat4/iocoin.git iocoin
+git clone git@github.com:iocoin/chameleon.git chameleon
 
 2.  Download and install MacPorts from http://www.macports.org/
 
@@ -41,14 +41,14 @@ sudo port install boost db48 openssl miniupnpc
 Optionally install qrencode (and set USE_QRCODE=1):
 sudo port install qrencode
 
-4.  Now you should be able to build iocoind:
+4.  Now you should be able to build chameleond:
 
-cd iocoin/src
+cd chameleon/src
 make -f makefile.osx
 
 Run:
-  ./iocoind --help  # for a list of command-line options.
+  ./chameleond --help  # for a list of command-line options.
 Run
-  ./iocoind -daemon # to start the iocoin daemon.
+  ./chameleond -daemon # to start the chameleon daemon.
 Run
-  ./iocoind help # When the daemon is running, to get a list of RPC commands
+  ./chameleond help # When the daemon is running, to get a list of RPC commands
