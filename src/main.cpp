@@ -2339,7 +2339,7 @@ bool CBlock::AddToBlockIndex(unsigned int nFile, unsigned int nBlockPos, const u
     pindexNew->SetStakeModifier(nStakeModifier, fGeneratedStakeModifier);
     pindexNew->nStakeModifierChecksum = GetStakeModifierChecksum(pindexNew);
     if (!CheckStakeModifierCheckpoints(pindexNew->nHeight, pindexNew->nStakeModifierChecksum))
-        return error("AddToBlockIndex() : Rejected by stake modifier checkpoint height=%d, modifier=0x%016"PRIx64, pindexNew->nHeight, nStakeModifier);
+	    return error("AddToBlockIndex() : Rejected by stake modifier checkpoint height=%d, modifier=0x%016"PRIx64, pindexNew->nHeight, nStakeModifier);
 
     // Add to mapBlockIndex
     map<uint256, CBlockIndex*>::iterator mi = mapBlockIndex.insert(make_pair(hash, pindexNew)).first;
@@ -2949,10 +2949,9 @@ bool LoadBlockIndex(bool fAllowNew)
         //     CTxOut(empty)
         //   vMerkleTree: cd5029ac01
 
-        //XXXX const char* pszTimestamp = "23 July 2014 BitPay Releases Copay Beta - A New Multi-signature Wallet";
         const char* pszTimestamp = "16 Jan 2019 - alfred noble releases chameleon whitepaper in dions block 2165178";
         CTransaction txNew;
-        txNew.nTime = 1406153471;
+        txNew.nTime = 1546383200;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2962,8 +2961,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1406153471;
+        block.nTime    = 1546383200;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
+        block.nNonce   = !fTestNet ? 2025105 : 0;
         // genesis block miner
 
          //if ((block.hashMerkleRoot != hashGenesisMerkleRoot) ||
@@ -2971,31 +2971,29 @@ bool LoadBlockIndex(bool fAllowNew)
          //{
          //    printf("Bad genesis block found. Minting new one.\n Please recompile with the newly found block as the new genesis block.\n");
 
-          //   uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
-          //   uint256 thash;
+         //  uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
+         //    uint256 thash;
 
-          //   while(true)
-          //   {
-                 // thash = Hash9(BEGIN(block.nVersion), END(block.nNonce));
-          //       thash = block.GetHash();
-          //       if (thash <= hashTarget)
-          //           break;
-          //       if ((block.nNonce & 0xFFF) == 0)
-          //       {
-          //           printf("nonce %08X: hash = %s (target = %s)\n", block.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
-          //       }
-          //       ++block.nNonce;
-          //       if (block.nNonce == 0)
-          //       {
-          //           printf("NONCE WRAPPED, incrementing time\n");
-          //           ++block.nTime;
-          //       }
-          //   }
-          //   printf("Found genesis block:\n");
-          //   block.print();
-         //}
-
-                block.nNonce   = !fTestNet ? 306504 : 0;
+         //    while(true)
+         //    {
+         //         thash = Hash9(BEGIN(block.nVersion), END(block.nNonce));
+         //        thash = block.GetHash();
+         //        if (thash <= hashTarget)
+         //            break;
+         //        if ((block.nNonce & 0xFFF) == 0)
+         //        {
+         //            printf("nonce %08X: hash = %s (target = %s)\n", block.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
+         //        }
+         //        ++block.nNonce;
+         //        if (block.nNonce == 0)
+         //        {
+         //            printf("NONCE WRAPPED, incrementing time\n");
+         //            ++block.nTime;
+         //        }
+         //    }
+         //    printf("Found genesis block:\n");
+         //    block.print();
+        // }
 
         //// debug print
         assert(block.hashMerkleRoot == hashGenesisMerkleRoot);
