@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 3.0.0.0
+!define VERSION 4.0.0.0
 !define Company "Chameleon project"
 !define URL https://www.chameleonledger.com
 
