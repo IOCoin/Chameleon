@@ -1,4 +1,4 @@
-I/OCoin-qt: Qt5 GUI for I/OCoin
+Chameleon-qt: Qt5 GUI for Chameleon
 ===============================
 
 Build instructions
@@ -24,9 +24,9 @@ then execute the following:
     qmake
     make
 
-Alternatively, install Qt Creator and open the `iocoin-qt.pro` file.
+Alternatively, install Qt Creator and open the `Chameleon-qt.pro` file.
 
-An executable named `iocoin-qt` will be built.
+An executable named `Chameleon-qt` will be built.
 
 
 Windows
@@ -119,7 +119,7 @@ Berkely DB version warning
 
 A warning for people using the *static binary* version of I/OCoin on a Linux/UNIX-ish system (tl;dr: **Berkely DB databases are not forward compatible**).
 
-The static binary version of I/OCoin is linked against libdb 5.0 (see also `this Debian issue`_).
+The static binary version of Chameleon is linked against libdb 5.0 (see also `this Debian issue`_).
 
 Now the nasty thing is that databases from 5.X are not compatible with 4.X.
 
@@ -134,7 +134,7 @@ Ubuntu 11.10 warning
 ====================
 
 Ubuntu 11.10 has a package called 'qt-at-spi' installed by default.  At the time of writing, having that package
-installed causes iocoin-qt to crash intermittently.  The issue has been reported as `launchpad bug 857790`_, but
+installed causes Chameleon-qt to crash intermittently.  The issue has been reported as `launchpad bug 857790`_, but
 isn't yet fixed.
 
 Until the bug is fixed, you can remove the qt-at-spi package to work around the problem, though this will presumably
