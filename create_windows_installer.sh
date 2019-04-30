@@ -6,5 +6,5 @@ pushd nsis/src
 mkdir ../release
 cp ../../release/* ../release/
 makensis ../share/setup.nsi
-cp ../share/iocoin-*-win32-setup.exe ../..
+cp ../share/chameleon-*-win32-setup.exe ../..
 popd
