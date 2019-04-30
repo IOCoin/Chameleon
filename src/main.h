@@ -70,9 +70,9 @@ static const int64_t MIN_COIN_YEAR_REWARD = 1 * CENT; // 1% per year
 static const int64_t MAX_COIN_YEAR_REWARD = 3 * CENT; // 3% per year
 
 
-static const uint256 hashGenesisBlock("0x00000d7a7f8811c14a09f6732f00fa4612a6d3c026a74ffed09d96d0ad0716d3");
+static const uint256 hashGenesisBlock("0x00000b8516ecb32044fabb494f45bada42b6184362b58e8e9337eee388ba84de");
 static const uint256 hashGenesisBlockTestNet("5f97300cd3dc3d2215dd38ce6d99bf7d5984bb62b2777060d3b5564298bd5484");
-static const uint256 hashGenesisMerkleRoot("0xd09c19ac2b6a40a1db79457229744b7fd0c7e46655f8f1ec4e27af26ce270349");
+static const uint256 hashGenesisMerkleRoot("0xddc6709fce09fb2a8b20f6f277c5044aa9c8981a46fc7cbb0191d73012f7bbb4");
 
 const int SHADE_FEATURE_UPDATE = 75 * 500 + 1860837;
 
