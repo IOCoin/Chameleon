@@ -10,7 +10,7 @@ CONFIG += thread
 }
 
 greaterThan(QT_MAJOR_VERSION, 4) {
-    QT += widgets  webkitwidgets
+    QT += widgets  webkitwidgets gui
     DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
 }
 
@@ -198,6 +198,8 @@ HEADERS += src/qt/bitcoingui.h \
     src/serialize.h \
     src/strlcpy.h \
     src/main.h \
+    src/state.h \
+    src/dions.h \
     src/miner.h \
     src/net.h \
     src/key.h \
@@ -250,7 +252,8 @@ HEADERS += src/qt/bitcoingui.h \
     src/netbase.h \
     src/clientversion.h \
     src/threadsafety.h \
-    
+    src/qt/ionspaymentprocessor.h \
+    src/qt/ionslookupaddressprocessor.h
 
 
 SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
@@ -273,6 +276,8 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/key.cpp \
     src/script.cpp \
     src/main.cpp \
+    src/state.cpp \
+    src/dions.cpp \
     src/miner.cpp \
     src/init.cpp \
     src/net.cpp \
@@ -339,7 +344,8 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/zerocoin/SerialNumberSignatureOfKnowledge.cpp \
     src/zerocoin/SpendMetaData.cpp \
     src/zerocoin/ZeroTest.cpp \
-    
+    src/qt/ionspaymentprocessor.cpp \
+    src/qt/ionslookupaddressprocessor.cpp
 
 RESOURCES += \
     src/qt/bitcoin.qrc
@@ -357,7 +363,8 @@ FORMS += \
     src/qt/forms/askpassphrasedialog.ui \
     src/qt/forms/rpcconsole.ui \
     src/qt/forms/optionsdialog.ui \
-    
+    src/qt/forms/ionspage.ui \
+    src/qt/forms/ionslookupdialog.ui
 
 contains(USE_QRCODE, 1) {
 HEADERS += src/qt/qrcodedialog.h
@@ -447,9 +454,16 @@ macx:QMAKE_CXXFLAGS_THREAD += -pthread
 INCLUDEPATH += $$BOOST_INCLUDE_PATH $$BDB_INCLUDE_PATH $$OPENSSL_INCLUDE_PATH $$QRENCODE_INCLUDE_PATH
 LIBS += $$join(BOOST_LIB_PATH,,-L,) $$join(BDB_LIB_PATH,,-L,) $$join(OPENSSL_LIB_PATH,,-L,) $$join(QRENCODE_LIB_PATH,,-L,)
 LIBS += -lssl -lcrypto -ldb_cxx$$BDB_LIB_SUFFIX
+LIBS+=   -lboost_iostreams 
+LIBS+=   -lz 
 # -lgdi32 has to happen after -lcrypto (see  #681)
 windows:LIBS += -lws2_32 -lshlwapi -lmswsock -lole32 -loleaut32 -luuid -lgdi32
 LIBS += -lboost_system$$BOOST_LIB_SUFFIX -lboost_filesystem$$BOOST_LIB_SUFFIX -lboost_program_options$$BOOST_LIB_SUFFIX -lboost_thread$$BOOST_THREAD_LIB_SUFFIX
+   LIBS += -lboost_system$(BOOST_LIB_SUFFIX) 
+   LIBS += -lboost_filesystem$(BOOST_LIB_SUFFIX)
+   LIBS += -lboost_program_options$(BOOST_LIB_SUFFIX)
+   LIBS += -lboost_serialization$(BOOST_LIB_SUFFIX)
+   LIBS += -lboost_thread$(BOOST_LIB_SUFFIX)
 windows:LIBS += -lboost_chrono$$BOOST_LIB_SUFFIX
 
 contains(RELEASE, 1) {
