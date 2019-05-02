@@ -29,7 +29,7 @@
 
 #include "netbase.h" // for AddTimeData
 
-// to obtain PRId64 on some old systems
+// to obtain  PRId64  on some old systems
 #define __STDC_FORMAT_MACROS 1
 
 #include <stdint.h>
@@ -58,14 +58,14 @@ static const int64_t CENT = 1000000;
      http://msdn.microsoft.com/en-us/library/tcxf1dw6%28v=vs.100%29.aspx
    */
   #define PRIszx    "Ix"
-  #define PRIszu    "Iu"
+  #define  PRIszu     "Iu"
   #define PRIszd    "Id"
   #define PRIpdx    "Ix"
   #define PRIpdu    "Iu"
   #define PRIpdd    "Id"
 #else /* C99 standard */
   #define PRIszx    "zx"
-  #define PRIszu    "zu"
+  #define  PRIszu     "zu"
   #define PRIszd    "zd"
   #define PRIpdx    "tx"
   #define PRIpdu    "tu"
@@ -239,7 +239,7 @@ double nBitsToDifficulty(unsigned int nBits);
 
 inline std::string i64tostr(int64_t n)
 {
-    return strprintf("%"PRId64, n);
+    return strprintf("%" PRId64 , n);
 }
 
 inline std::string itostr(int n)
