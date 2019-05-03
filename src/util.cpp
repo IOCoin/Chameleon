@@ -1235,7 +1235,7 @@ boost::filesystem::path GetDefaultDataDir()
 
 #ifdef WIN32
 
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "IOCoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "chameleon";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -1247,7 +1247,7 @@ boost::filesystem::path GetDefaultDataDir()
 
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "IOCoin";
+    return pathRet / "chameleon";
 #else
 
     return pathRet / ".chameleon";
