@@ -27,7 +27,7 @@ SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget *parent) :
     ui->addressIn_SM->setPlaceholderText(tr("Enter a Chameleon address (e.g. ceboWqjtjSCEfwKTy2Hd2Fw2S6HgqsJg96)"));
     ui->signatureOut_SM->setPlaceholderText(tr("Click \"Sign Message\" to generate signature"));
 
-    ui->addressIn_VM->setPlaceholderText(tr("Enter a Chameleon address (e.g. iphU6HbZCuDsx1nGWncuwxYdHcF74zLv8U)"));
+    ui->addressIn_VM->setPlaceholderText(tr("Enter a Chameleon address (e.g. ceboWqjtjSCEfwKTy2Hd2Fw2S6HgqsJg96)"));
     ui->signatureIn_VM->setPlaceholderText(tr("Enter Chameleon signature"));
 #endif
 
