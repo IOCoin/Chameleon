@@ -122,7 +122,7 @@ Financial loss due to wallet hacks or unavailability.
 Financial loss due to corrupted data on our blockchain or encryption failiure.
 Financial loss or data losss due to ecncryption brutte force or blockchain failiure.
 Financial loss or data losss due to corrupted wallet.dat or end user computer failiure.
-Financial loss due to incorrectly constructed transactions or mistyped iocoin addresses.
+Financial loss due to incorrectly constructed transactions or mistyped chameleon addresses.
 Financial loss due to "phishing" or other websites masquerading as The Chameleon Project.
 
 The Chameleon Project is not a bank or regulated financial institution. Any Chameleon stored using Chameleon’s Blockchain wallets are not in Chameleon Project control. The Chameleon Open Source Developers simply provide an interface to access the Chameleon Blockchain. The Chameleon Blockchain community and developers does not have control over or take any responsibility for any transactions made through the Chameleon Blockchain & Chameleon Wallet. The Chameleon Project, contributors or the Chameleon community have no control of any failure as the blockchain is an open source project  (Open Source Blockchain) and therefore carries no liability to any central entity regarding failure of wallets or the Blockchain. Open Source developers can make requests through proper channels for upgrades, bug reporting and enhancements which would ultimately be approved via consensus mechanisms by the open source Chameleon community. 

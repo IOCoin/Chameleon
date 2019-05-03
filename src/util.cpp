@@ -1199,7 +1199,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "iocoin";
+    const char* pszModule = "chameleon";
 #endif
     if (pex)
         return strprintf(
@@ -1250,7 +1250,7 @@ boost::filesystem::path GetDefaultDataDir()
     return pathRet / "IOCoin";
 #else
 
-    return pathRet / ".iocoin";
+    return pathRet / ".chameleon";
 #endif
 #endif
 }
@@ -1292,7 +1292,7 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "iocoin.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "chameleon.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1323,7 +1323,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "iocoind.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "chameleond.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }

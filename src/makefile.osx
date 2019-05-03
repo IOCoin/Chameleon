@@ -3,8 +3,7 @@
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-# Mac OS X makefile for iocoin
-# Originally by Laszlo Hanyecz (solar@heliacal.net)
+# Mac OS X makefile for chameleon
 
 CXX=llvm-g++
 DEPSDIR=/opt/local
@@ -23,7 +22,7 @@ LIBPATHS= \
 LIBS= -dead_strip
 
 ifdef STATIC
-# Build STATIC if you are redistributing the chd binary
+# Build STATIC if you are redistributing the chameleond binary
 LIBS += \
  $(DEPSDIR)/lib/db48/libdb_cxx-4.8.a \
  $(DEPSDIR)/lib/libboost_system-mt.a \
@@ -131,7 +130,7 @@ else
 endif
 endif
 
-all: chd
+all: chameleond
 
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
 DEFS += $(addprefix -I,$(CURDIR)/leveldb/include)
@@ -170,11 +169,11 @@ obj/zerocoin/%.o: zerocoin/%.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-chd: $(OBJS:obj/%=obj/%)
+chameleond: $(OBJS:obj/%=obj/%)
 	$(CXX) $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 clean:
-	-rm -f chd
+	-rm -f chameleond
 	-rm -f obj/*.o
 	-rm -f obj/zerocoin/*.o
 	-rm -f obj/*.P

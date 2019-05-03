@@ -40,7 +40,7 @@
 #include "shellapi.h"
 #endif
 
-QString ionsURL =  "ions.iocoin.io";
+QString ionsURL =  "ions.chameleon.io";
 
 namespace GUIUtil {
 
@@ -84,7 +84,7 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
     // NovaCoin: check prefix
-    if(uri.scheme() != QString("iocoin"))
+    if(uri.scheme() != QString("chameleon"))
         return false;
 
     SendCoinsRecipient rv;
@@ -129,13 +129,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert iocoin:// to iocoin:
+    // Convert chameleon:// to chameleon:
     //
     //    Cannot handle this later, because bitcoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("iocoin://"))
+    if(uri.startsWith("chameleon://"))
     {
-        uri.replace(0, 12, "iocoin:");
+        uri.replace(0, 12, "chameleon:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -361,7 +361,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "iocoin.desktop";
+    return GetAutostartDir() / "chameleon.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -426,7 +426,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
     header = tr("Chameleon-Qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  iocoin-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  chameleon-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());
 

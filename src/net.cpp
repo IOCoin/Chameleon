@@ -408,7 +408,7 @@ bool GetMyExternalIP(CNetAddr& ipRet)
 void ThreadGetMyExternalIP(void* parg)
 {
     // Make this thread recognisable as the external IP detection thread
-    RenameThread("iocoin-ext-ip");
+    RenameThread("chameleon-ext-ip");
 
     CNetAddr addrLocalHost;
     if (GetMyExternalIP(addrLocalHost))
@@ -749,7 +749,7 @@ void SocketSendData(CNode *pnode)
 void ThreadSocketHandler(void* parg)
 {
     // Make this thread recognisable as the networking thread
-    RenameThread("iocoin-net");
+    RenameThread("chameleon-net");
 
     try
     {
@@ -1078,7 +1078,7 @@ void ThreadSocketHandler2(void* parg)
 void ThreadMapPort(void* parg)
 {
     // Make this thread recognisable as the UPnP thread
-    RenameThread("iocoin-UPnP");
+    RenameThread("chameleon-UPnP");
 
     try
     {
@@ -1243,7 +1243,7 @@ void ThreadDumpAddress2(void* parg)
 void ThreadDumpAddress(void* parg)
 {
     // Make this thread recognisable as the address dumping thread
-    RenameThread("iocoin-adrdump");
+    RenameThread("chameleon-adrdump");
 
     try
     {
@@ -1258,7 +1258,7 @@ void ThreadDumpAddress(void* parg)
 void ThreadOpenConnections(void* parg)
 {
     // Make this thread recognisable as the connection opening thread
-    RenameThread("iocoin-opencon");
+    RenameThread("chameleon-opencon");
 
     try
     {
@@ -1419,7 +1419,7 @@ void ThreadOpenConnections2(void* parg)
 void ThreadOpenAddedConnections(void* parg)
 {
     // Make this thread recognisable as the connection opening thread
-    RenameThread("iocoin-opencon");
+    RenameThread("chameleon-opencon");
 
     try
     {
@@ -1550,7 +1550,7 @@ bool OpenNetworkConnection(const CAddress& addrConnect, CSemaphoreGrant *grantOu
 void ThreadMessageHandler(void* parg)
 {
     // Make this thread recognisable as the message handling thread
-    RenameThread("iocoin-msghand");
+    RenameThread("chameleon-msghand");
 
     try
     {
@@ -1797,7 +1797,7 @@ void static Discover()
 void StartNode(void* parg)
 {
     // Make this thread recognisable as the startup thread
-    RenameThread("iocoin-start");
+    RenameThread("chameleon-start");
 
     if (semOutbound == NULL) {
         // initialize semaphore

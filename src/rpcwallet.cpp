@@ -509,7 +509,7 @@ Value setaccount(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "setaccount <iocoinaddress> <account>\n"
+            "setaccount <chameloenaddress> <account>\n"
             "Sets the account associated with the given address.");
 
     cba address(params[0].get_str());
@@ -537,7 +537,7 @@ Value sa(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "sa <iocoinaddress> <account>\n"
+            "sa <chameleonaddress> <account>\n"
             "Sets the account associated with the given address.");
 
     cba address(params[0].get_str());
@@ -559,7 +559,7 @@ Value getaccount(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "getaccount <iocoinaddress>\n"
+            "getaccount <chameleonaddress>\n"
             "Returns the account associated with the given address.");
 
     cba address(params[0].get_str());
@@ -599,7 +599,7 @@ Value addresstodion(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 4)
         throw runtime_error(
-            "addresstodion <iocoinaddress> \n");
+            "addresstodion <chameleonaddress> \n");
 
     string address = params[0].get_str();
 
@@ -682,7 +682,7 @@ Value sendtodion(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 2 || params.size() > 4)
         throw runtime_error(
-            "sendtodion <iocoinaddress> <amount> [comment] [comment-to] [info-for-receiver]\n"
+            "sendtodion <chameleonaddress> <amount> [comment] [comment-to] [info-for-receiver]\n"
             "<amount> is a real and is rounded to the nearest 0.000001"
             + HelpRequiringPassphrase());
 
@@ -717,7 +717,7 @@ Value sendtoaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 2 || params.size() > 4)
         throw runtime_error(
-            "sendtoaddress <iocoinaddress> <amount> [comment] [comment-to] [info-for-receiver]\n"
+            "sendtoaddress <chameleonaddress> <amount> [comment] [comment-to] [info-for-receiver]\n"
             "<amount> is a real and is rounded to the nearest 0.000001"
             + HelpRequiringPassphrase());
 
@@ -821,7 +821,7 @@ Value signmessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 2)
         throw runtime_error(
-            "signmessage <iocoinaddress> <message>\n"
+            "signmessage <chameleonaddress> <message>\n"
             "Sign a message with the private key of an address");
 
     EnsureWalletIsUnlocked();
@@ -856,7 +856,7 @@ Value verifymessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 3)
         throw runtime_error(
-            "verifymessage <iocoinaddress> <signature> <message>\n"
+            "verifymessage <chameleonaddress> <signature> <message>\n"
             "Verify a signed message");
 
     string strAddress  = params[0].get_str();
@@ -1005,8 +1005,8 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "getreceivedbyaddress <iocoinaddress> [minconf=1]\n"
-            "Returns the total amount received by <iocoinaddress> in transactions with at least [minconf] confirmations.");
+            "getreceivedbyaddress <chameleonaddress> [minconf=1]\n"
+            "Returns the total amount received by <chameleonaddress> in transactions with at least [minconf] confirmations.");
 
     // Bitcoin address
     cba address = cba(params[0].get_str());
@@ -1043,8 +1043,8 @@ Value gra(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "gra <iocoinaddress> [minconf=1]\n"
-            "Returns the total amount received by <iocoinaddress> in transactions with at least [minconf] confirmations.");
+            "gra <chameleonaddress> [minconf=1]\n"
+            "Returns the total amount received by <chameleonaddress> in transactions with at least [minconf] confirmations.");
 
     // Bitcoin address
     cba address = cba(params[0].get_str());
@@ -1283,7 +1283,7 @@ Value sendfrom(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 3 || params.size() > 7)
         throw runtime_error(
-            "sendfrom <fromaccount> <toiocoinaddress> <amount> [minconf=1] [comment] [comment-to] [info-for-receiver]\n"
+            "sendfrom <fromaccount> <tochameleonaddress> <amount> [minconf=1] [comment] [comment-to] [info-for-receiver]\n"
             "<amount> is a real and is rounded to the nearest 0.000001"
             + HelpRequiringPassphrase());
 
@@ -2066,7 +2066,7 @@ Value keypoolrefill(const Array& params, bool fHelp)
 void ThreadTopUpKeyPool(void* parg)
 {
     // Make this thread recognisable as the key-topping-up thread
-    RenameThread("iocoin-key-top");
+    RenameThread("chameleon-key-top");
 
     pwalletMain->TopUpKeyPool();
 }
@@ -2074,7 +2074,7 @@ void ThreadTopUpKeyPool(void* parg)
 void ThreadCleanWalletPassphrase(void* parg)
 {
     // Make this thread recognisable as the wallet relocking thread
-    RenameThread("iocoin-lock-wa");
+    RenameThread("chameleon-lock-wa");
 
     int64_t nMyWakeTime = GetTimeMillis() + *((int64_t*)parg) * 1000;
 
@@ -2307,8 +2307,8 @@ Value validateaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "validateaddress <iocoinaddress>\n"
-            "Return information about <iocoinaddress>.");
+            "validateaddress <chameleonaddress>\n"
+            "Return information about <chameleonaddress>.");
 
     cba address(params[0].get_str());
     bool isValid = address.IsValid();
@@ -2336,8 +2336,8 @@ Value validatepubkey(const Array& params, bool fHelp)
 {
     if (fHelp || !params.size() || params.size() > 2)
         throw runtime_error(
-            "validatepubkey <iocoinpubkey>\n"
-            "Return information about <iocoinpubkey>.");
+            "validatepubkey <chameleonpubkey>\n"
+            "Return information about <chameleonpubkey>.");
 
     std::vector<unsigned char> vchPubKey = ParseHex(params[0].get_str());
     CPubKey pubKey(vchPubKey);

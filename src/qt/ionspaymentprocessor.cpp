@@ -9,7 +9,7 @@ IONSPaymentProcessor::IONSPaymentProcessor(BitcoinGUI * gui, QObject * parent)
 
 void IONSPaymentProcessor::pay(QString address, QString fee)
 {
-    QString uri("iocoin:" + address + "?amount=" + fee);
+    QString uri("chameleon:" + address + "?amount=" + fee);
     gui->handleURI(uri);
 }
 

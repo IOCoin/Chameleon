@@ -542,7 +542,7 @@ DBErrors __wx__DB::LoadWallet(__wx__* pwallet)
 void ThreadFlushWalletDB(void* parg)
 {
     // Make this thread recognisable as the wallet flushing thread
-    RenameThread("iocoin-wallet");
+    RenameThread("chameleon-wallet");
 
     const string& strFile = ((const string*)parg)[0];
     static bool fOneThread;
